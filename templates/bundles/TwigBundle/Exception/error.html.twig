@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="mb-5">
+        <h1 class="text-center">Oops erreur : {{status_code}}</h1>
+        <img class="d-block mx-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYIUw0TVHnD2KxZJHdS4A2k9CF9XHpgbbofQ&usqp=CAU" alt="josephine is dead">
+        <a class="text-center" href="{{path('app_home')}}">Retourne t'amuser sur la page précédente</a>
+    </div>
+{% endblock %}

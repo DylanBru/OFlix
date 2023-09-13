@@ -1,0 +1,28 @@
+{% set star = 0 %}
+
+{# je boucle de 1 à 5 #}
+{% for i in 1..5 %}
+
+    {# si mon itération est inférieur ou = à la notre, ça veut dire que je peux rajouter une étoile pleine #}
+    {% if i <= rating %}
+        <i class="bi bi-star-fill"></i>
+        {# j'incrémente mon compteur d'étoile #}
+        {% set star = star + 1 %}
+    {% endif %}
+    
+{% endfor %}
+{# je sors de la boucle pour gérer ma moitié d'étoile #}
+{# si le nombre d'étoiles que j'ai mis est inférieur à la note, je sais que je dois rajouter une moitié #}
+{% if star < rating %}
+    <i class="bi bi-star-half"></i>
+    {% set star = star + 1 %}
+{% endif %}
+
+{# Nous reste plus qu'à afficher toutes les étoiles vides #}
+{% if star < 5 %}
+    {# ici je boucle de 1 à le nombre d'étoile qu'il me reste à rajouter #}
+    {% for i in 1..(5 - star) %}
+         <i class="bi bi-star"></i>
+    {% endfor %}
+{% endif %}
+
